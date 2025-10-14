@@ -9,7 +9,6 @@
   let isjumping = false;
   let goingup = false;
   let maxalt = 150;
- 
 
   // funzione salto
 
@@ -69,10 +68,14 @@
     }
     if(left + cactus1.offsetWidth > 0){
         requestAnimationFrame(sinistra);
+        
+        
     }
     else{
         left = contenitoreGioco.offsetWidth;
          requestAnimationFrame(sinistra);
+         
+         
        }
 
     }
@@ -80,10 +83,30 @@
     document.addEventListener("mousedown", function(event){
         if(event.button === 0 && !goingleft){
             requestAnimationFrame(sinistra);
-            goingleft = true
+            requestAnimationFrame(loopGioco);
+            goingleft = true;
         }
     })
    
+
+    // funzione monitoraggio collisioni
+
+    function loopGioco(){
+         let dinoBox = dino.getBoundingClientRect();
+         let cactus1Box = cactus1.getBoundingClientRect();
+        if( 
+            dinoBox.right > cactus1Box.left &&
+            dinoBox.left < cactus1Box.right &&
+            dinoBox.bottom > cactus1Box.top &&
+            dinoBox.top < cactus1Box.bottom
+        ){
+            left = contenitoreGioco.offsetWidth;
+            alert("Game Over!");
+            requestAnimationFrame(loopGioco);
+        }else{
+            requestAnimationFrame(loopGioco);
+        }
+    }
 
 
 
