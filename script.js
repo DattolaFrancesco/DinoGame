@@ -54,7 +54,10 @@
     // variabili spostamento verso sinistra
 
     let left = contenitoreGioco.offsetWidth;
+    
     cactus1.style.left = left + "px";
+    
+
     let goingleft = false;
     
     
@@ -82,9 +85,10 @@
 
     document.addEventListener("mousedown", function(event){
         if(event.button === 0 && !goingleft){
+            goingleft = true;
             requestAnimationFrame(sinistra);
             requestAnimationFrame(loopGioco);
-            goingleft = true;
+            
         }
     })
    

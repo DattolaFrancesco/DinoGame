@@ -28,3 +28,23 @@
     bottom: 0;
     right: 10%;
 }
+.cactus2{
+    background-image: url(cactus2.png);
+    background-size: 100% 100%;
+    background-position: bottom center;
+    position: absolute;
+    height: 18%;
+    width: 7%;
+    bottom: 0;
+    right: -10%;
+}
+.cactus3{
+    background-image: url(cactus3.png);
+    background-size: 100% 100%;
+    background-position: bottom center;
+    position: absolute;
+    height: 18%;
+    width: 10%;
+    bottom: 0;
+    right: -10%;
+}
