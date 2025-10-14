@@ -4,11 +4,12 @@
 
    // variabili del salto
 
-  let bottom = 0
-  let increase = 5
-  let isjumping = false
-  let goingup = false
-  let maxalt = 150
+  let bottom = 0;
+  let increase = 5;
+  let isjumping = false;
+  let goingup = false;
+  let maxalt = 150;
+ 
 
   // funzione salto
 
@@ -21,13 +22,15 @@
             
         }if(!goingup){
             bottom -= increase
-            isjumping = false
+            
         }
 
         dino.style.bottom = bottom + "px"
 
         if(bottom > 0){
              requestAnimationFrame(salto);
+        }if(bottom === 0 ){
+           isjumping = false;
         }
         
            
@@ -35,9 +38,52 @@
   }
  
     document.addEventListener("keydown", function(event){
-        if(event.code === "Space" && !isjumping){
+        if(event.code === "Space" && !isjumping  ){ 
             isjumping = true;
-            requestAnimationFrame(salto);
             goingup = true;
+            requestAnimationFrame(salto);
+            
         }
     })
+
+    // selettore cactus1
+
+    cactus1 = document.querySelector(".cactus1")
+    contenitoreGioco = document.querySelector("#contenitore-gioco")
+
+
+    // variabili spostamento verso sinistra
+
+    let left = contenitoreGioco.offsetWidth;
+    cactus1.style.left = left + "px";
+    let goingleft = false;
+    
+    
+    //funzione movimento verso sinistra
+
+    function sinistra(){
+       if(goingleft){
+          
+        left -= 3;
+          cactus1.style.left = left + "px";
+    }
+    if(left + cactus1.offsetWidth > 0){
+        requestAnimationFrame(sinistra);
+    }
+    else{
+        left = contenitoreGioco.offsetWidth;
+         requestAnimationFrame(sinistra);
+       }
+
+    }
+
+    document.addEventListener("mousedown", function(event){
+        if(event.button === 0 && !goingleft){
+            requestAnimationFrame(sinistra);
+            goingleft = true
+        }
+    })
+   
+
+
+
