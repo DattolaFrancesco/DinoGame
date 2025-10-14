@@ -1,12 +1,40 @@
-#contenitore-gioco{
-    background-color:lightgray;
+body{
+    background-color: rgb(175, 209, 97);
+}
+.titolo{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
+    color: rgb(103, 2, 112);
+    font-size: larger;
+}
+#contenitore-gioco{
+    background-color:rgb(143, 201, 235);
+    text-align: center;
+    margin-top: 50px;
     margin-left: 15%;
     margin-right: 15%;
     height: 300px;
-    border-bottom: 2px solid rgb(124, 81, 0);
+    border-bottom: 20px solid rgb(148, 97, 3);
     position: relative;
+    border-radius: 8px;
+}
+.punteggio{
+    text-align: left;
+}
+.gameover{
+    width: 450px;
+    height: 200px;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+}
+.h1G{
+    color: red;
+    font-size: 70px;
+    display: none;
 }
 .dino{
     background-image: url(dino.png);
@@ -27,6 +55,7 @@
     width: 4%;
     bottom: 0;
     right: 10%;
+    display: none;
 }
 .cactus2{
     background-image: url(cactus2.png);
@@ -36,7 +65,8 @@
     height: 18%;
     width: 7%;
     bottom: 0;
-    right: -10%;
+    right: 10%;
+    display: none;
 }
 .cactus3{
     background-image: url(cactus3.png);
@@ -46,5 +76,29 @@
     height: 18%;
     width: 10%;
     bottom: 0;
-    right: -10%;
+    right: 10%;
+    display: none;
+}
+.button{
+    
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+}
+.buttonGame{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(165, 93, 233);
+    border: none;
+    border-radius: 10px;
+}
+.riprova{
+    width: 120px;
+    height: 30px;
+    background-color: rgb(161, 135, 231);
+    border: none;
+    border-radius: 10px;
+}
+.rigioca{
+    text-align: center;
+    margin: 30px 0px 30px 0px;
 }
