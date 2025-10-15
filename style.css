@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 body{
     background-color: #e2b58a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .titolo{
     text-align: center;
@@ -20,9 +24,9 @@ body{
     background-size: cover;
     text-align: center;
     margin-top: 50px;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 60vw;
     height: 300px;
+    max-width: 700px;
     position: relative;
     border-radius: 8px;
     border: 2px solid #2C0000;
