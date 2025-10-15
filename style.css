@@ -1,22 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Montserrat:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 body{
-    background-color: rgb(175, 209, 97);
+    background-color: #e2b58a;
 }
 .titolo{
     text-align: center;
     margin-top: 30px;
-    color: rgb(103, 2, 112);
-    font-size: larger;
+    color: #6996D9;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 30px;
+    
 }
 #contenitore-gioco{
-    background-color:rgb(143, 201, 235);
+    background-image: url(mahmoud-emad-y30IUND-0l4-unsplash.jpg) ;
+    background-size: cover;
     text-align: center;
     margin-top: 50px;
     margin-left: 15%;
     margin-right: 15%;
     height: 300px;
-    border-bottom: 20px solid rgb(148, 97, 3);
     position: relative;
     border-radius: 8px;
+    border: 2px solid #2C0000;
 }
 .punteggio{
     text-align: left;
@@ -32,8 +41,11 @@ body{
     display: flex; 
 }
 .h1G{
-    color: red;
-    font-size: 70px;
+    color: rgb(0, 0, 0);
+    font-family: "Audiowide", sans-serif;
+    font-weight:600;
+    font-style: normal;
+    font-size: 57px;
     display: none;
 }
 .dino{
@@ -43,7 +55,7 @@ body{
     position: absolute;
     height: 20%;
     width: 7%;
-    bottom: 0;
+    bottom: 8px ;
     left: 10%;
 }
 .cactus1{
@@ -53,7 +65,7 @@ body{
     position: absolute;
     height: 18%;
     width: 4%;
-    bottom: 0;
+    bottom: 2%;
     right: 10%;
     display: none;
 }
@@ -64,7 +76,7 @@ body{
     position: absolute;
     height: 18%;
     width: 7%;
-    bottom: 0;
+    bottom: 2%;
     right: 10%;
     display: none;
 }
@@ -75,7 +87,7 @@ body{
     position: absolute;
     height: 18%;
     width: 10%;
-    bottom: 0;
+    bottom: 2%;
     right: 10%;
     display: none;
 }
@@ -87,16 +99,34 @@ body{
 .buttonGame{
     width: 150px;
     height: 50px;
-    background-color: rgb(165, 93, 233);
+    background-color: #A67E5A;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 5px 4px black
+}
+.buttonGame:active{
+    background-color: #a77346;
+    cursor: pointer;
+    box-shadow:  0px 0px 0px black;
+}
+.buttonGame:hover{
+    cursor: pointer;
 }
 .riprova{
     width: 120px;
     height: 30px;
-    background-color: rgb(161, 135, 231);
+    background-color: #A67E5A;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 5px 4px black
+}
+.riprova:hover{
+    cursor: pointer;
+}
+.riprova:active{
+    background-color: #a77346;
+    cursor: pointer;
+    box-shadow:  0px 0px 0px black;
 }
 .rigioca{
     text-align: center;

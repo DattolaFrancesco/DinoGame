@@ -4,11 +4,11 @@
 
    // variabili del salto
 
-  let bottom = 0;
+  let bottom = 8;
   let increase = 5;
   let isjumping = false;
   let goingup = false;
-  let maxalt = 115;
+  let maxalt = 130;
 
   // funzione salto
 
@@ -26,9 +26,9 @@
 
         dino.style.bottom = bottom + "px"
 
-        if(bottom > 0){
+        if(bottom > 8){
              requestAnimationFrame(salto);
-        }if(bottom === 0 ){
+        }if(bottom === 8 ){
            isjumping = false;
         }
         
