@@ -71,6 +71,7 @@
     let stopGame = false
     let cactusArray = [cactus1,cactus2,cactus3];
     let velocita = 0
+    let ritenta = false;
     //funzione per fare il cactus casuale
 
     function randomcactus(){
@@ -129,6 +130,7 @@
 
     buttonGame.addEventListener("click", function(){
         if(!goingleft){
+            
             goingleft = true;
             let cactus = randomcactus()
             let left = contenitoreGioco.offsetWidth;
@@ -139,11 +141,39 @@
         }
     })
    
+    // funzione per il riavvio del gioco
 
-    // funzione monitoraggio collisioni
+    function RiavvioGioco(){
+           
+        if(!ritenta){
+           GameOver.style.display = "none";
+           stopGame = false;
+           goingleft =true;
+           score = 0
+           velocita = 0
+           aggiornapunteggio();
+
+           bottom = 8
+           dino.style.bottom = bottom + "px";
+
+           cactusArray.forEach(cactus => {
+            cactus.style.left = contenitoreGioco.offsetWidth + "px";
+            cactus.style.display = "none";
+        })
+           ritenta = true;
+           let cactus = randomcactus();
+            let left = contenitoreGioco.offsetWidth;
+            sinistra(cactus, left);
+           requestAnimationFrame(loopGioco);
+        }
+    }
+
+     // funzione monitoraggio collisioni
 
     function loopGioco(){
-
+        if(stopGame){
+            return
+        }
          let dinoBox = dino.getBoundingClientRect();
          let cactus1Box = cactus1.getBoundingClientRect();
          let cactus2Box = cactus2.getBoundingClientRect();
@@ -158,6 +188,8 @@
             left = contenitoreGioco.offsetWidth;
             GameOver.style.display = "block"
             requestAnimationFrame(loopGioco);
+            ritenta = false;
+            return;
         }
         if( dinoBox.right > cactus2Box.left &&
             dinoBox.left < cactus2Box.right &&
@@ -168,6 +200,8 @@
             left = contenitoreGioco.offsetWidth;
             GameOver.style.display = "block"
             requestAnimationFrame(loopGioco);
+            ritenta = false;
+            return;
         }
         if( dinoBox.right > cactus3Box.left &&
             dinoBox.left < cactus3Box.right &&
@@ -178,6 +212,8 @@
             left = contenitoreGioco.offsetWidth;
             GameOver.style.display = "block"
             requestAnimationFrame(loopGioco);
+            ritenta = false;
+            return;
         }
         else{
             requestAnimationFrame(loopGioco);
@@ -187,7 +223,7 @@
 // funzione per rigiocare
 
 Riprova.addEventListener("click",function(){
-    location.reload();
+    RiavvioGioco();
 })
 
 // funzione punteggio
