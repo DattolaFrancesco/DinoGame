@@ -53,9 +53,11 @@ body{
     display: none;
 }
 .dino{
-    background-image: url(dino.png);
+    background-image: url(godzilla-5310877_640.png);
     background-size: 100% 100%;
     background-position: bottom center;
+    transform: scaleX(-1);
+    transform-origin: center;
     position: absolute;
     height: 20%;
     width: 7%;
@@ -63,7 +65,7 @@ body{
     left: 10%;
 }
 .cactus1{
-    background-image: url(cactus1.png);
+    background-image: url(cacti-151474_640.png);
     background-size: 100% 100%;
     background-position: bottom center;
     position: absolute;
